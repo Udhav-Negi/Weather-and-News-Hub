@@ -1,0 +1,51 @@
+<%- include('./partials/header.ejs', {style : '/udhav/css/news.css', title : "News"})%>
+
+
+
+<nav>
+    <ul class="first navitem">
+        <li class="items item1"><a href="/udhav/business"> Business </a></li>
+        <li class="items item2"><a href="/udhav/entertainment"> Entertainment </a></li>
+        <li class="items item3"><a href="/udhav/general"> General </a></li>
+        <li class="items item4"><a href="/udhav/health"> Health </a></li>
+        <li class="items item5"><a href="/udhav/science"> Science </a></li>
+        <li class="items item5"><a href="/udhav/sports"> Sports </a></li>
+        <li class="items item6"><a href="/udhav/technology"> Technology </a></li>
+    </ul>
+
+    <ul class="second navitem">
+        <li class="items "><a href="/udhav/weather">Weather</a></li>
+        <li class="items "><a href="/udhav/logout">LogOut</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="child1">
+        <p class="child1-heading">Top News from this section</p>
+        <% left.forEach((item)=>{%>
+        <a class="headline-side" href="<%= item.url%>" target="_blank"><%= item.title%></a>
+        <%})%>
+    </div>
+    <div class="container">
+        <%let x = "/udhav/img/default1.jpg"%>
+        <%data.forEach((item)=>{%>
+            <div class="card">
+                <p class="source"><%= item.source.name%></p>
+                <img src="<%= item.urlToImage ? item.urlToImage :  x %>" alt="">
+                
+                <!-- <img src="<%= item.urlToImage %>" alt=""> -->
+        
+                <p class="date"><%= new Date(item.publishedAt).toGMTString()%> </p>
+                <p class="headline"><%= item.title ? item.title.slice(0, 30) : "..."%>...</p>
+                <p class="detail"><%= item.description ? item.description.slice(0, 120) : "No Description. Click link to read"%>...</p>
+        
+                <div class="btn">
+                    <img src="/udhav/img/right.png" alt="" class="btn-img">
+                    <a href="<%= item.url%>" class="btn-link">Find out more</a>
+                </div>
+            </div>
+        <%})%>
+    </div>
+</section>
+
+<%- include('./partials/footer.ejs')%>

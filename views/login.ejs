@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs', {style : "/udhav/css/login.css", title : "Sign in"})%>
+
+
+
+<div class="main-container">
+    <div class="text">
+        <p>Create account to read latest news and weather reports </p>
+    </div>
+
+
+    <form action="/udhav/login" method="post">
+        <div class="container">
+            <h2>Log in </h2>
+            <div class="contact">
+                <input type="email" name="email" placeholder="Email"  required>
+            </div>
+            <div class="password">
+                <input type="password" name="password" placeholder="Password" required>
+            </div> 
+        
+            <div class="buttons">
+                <button class="btn btn-login">Log in</button>
+                <button class="btn btn-create">Create account </button>
+            </div>
+    
+        </div>
+    
+    </form>
+</div>
+<script>
+    document.getElementsByClassName('btn-create')[0].addEventListener('click', ()=>{
+        window.location.href = "/udhav/signup"
+    })
+</script>
+<%- include('./partials/footer.ejs')%>

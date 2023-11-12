@@ -1,0 +1,172 @@
+body{
+    font-family: 'Croissant One', cursive;
+}
+nav{
+    display: flex;
+    background:linear-gradient(to right , rgb(77, 77, 77), rgb(64, 64, 64), rgb(26, 26, 26), rgb(13, 13, 13));
+    color: rgb(244, 245, 236);
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+.nav-1 p{
+    font-size: 30px;
+}
+
+.cont{
+    margin-top: 2.2rem;
+    /* border: 3px solid green; */
+}
+.nav-a{
+    /* border: 3px solid red; */
+    text-decoration: none;
+    color: rgb(244, 245, 236);
+    margin-top: 2rem;
+}
+
+form label input{
+    height: 2rem;
+    width: 12rem;
+}
+.submit-btn{
+    border-radius: 7px;
+    height: 2rem;
+    width: 6rem;
+    background-color: rgba(30, 30, 248, 0.84);
+    color: white;
+    font-size: 20px;
+}
+
+
+section{
+    min-height: 100vh;
+}
+
+.section-1{
+    height:15rem;
+    background: url('/udhav/img/cloudy1.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-bottom: 30px;
+}
+.section-2{
+    margin: 0px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.section-3{
+    margin: 0px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.section-4
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.section-4-1
+{
+    display: flex;
+}
+.section-4-1-1
+{
+    width: 100px;
+    height:5rem;
+    background: url('/udhav/img/low-temperature-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.section-4-1-2
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-4-1-2-1
+{
+    margin: 0;
+}
+.section-4-1-2-2
+{
+    margin: 0;
+}
+
+
+.section-4-2
+{
+    display: flex;
+}
+.section-4-2-1
+{
+    width: 100px;
+    height:5rem;
+    background: url('/udhav/img/water-droplet-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.section-4-2-2
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-4-2-2-1
+{
+    margin: 0;
+}
+.section-4-2-2-2
+{
+    margin: 0;
+}
+
+footer{
+    background-color: #595959;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+footer a{
+    text-decoration: none;
+}
+
+.footer-1{
+    margin: 0px;
+}
+.footer-2{
+    margin: 0px;
+}
+
+
+/* for responsiveness */
+@media screen and (max-width:400px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-1{
+        width: auto;
+    }
+    form{
+        width: auto;
+    }
+}

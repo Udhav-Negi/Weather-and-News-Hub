@@ -1,0 +1,91 @@
+<%- include('./partials/header.ejs', {style : "/udhav/css/home.css" , title :
+"Home" })%>
+
+
+
+<nav id="top">
+  <div class="items">
+    <a href="" class="item item1">Home</a>
+    <a href="" class="item item2">Products</a>
+    <a href="" class="item item3">Contact</a>
+  </div>
+
+  <div class="buttons">
+    <button role="button" class="btn"><a href="/udhav/login">Log in</a></button>
+    <button class="btn"><a href="/udhav/signup">Sign Up</a></button>
+  </div>
+</nav>
+<!-- navigation end here  -->
+
+<section>
+        <h3 class="text-center heading-news">Sign up for the latest news!</h3>
+
+        <div class="news">
+            <% data.forEach((item)=>{%>
+            <div class="card">
+              <p class="source"><%= item.source.name%></p>
+              <img class="newsimage" src="<%= item.urlToImage %>" alt="">
+              <!-- <img class="newsimage" src="/student/img/default.jpg" alt=""> -->
+              <p class="headline"><%= item.title ? item.title.slice(0, -1) : "..."%>...</p>
+              <p class="author">By <% if(item.author){%>
+                <%=item.author.slice(0, 15)%>
+                <%}else{%>
+                  <%=item.source.name%>
+                </p>
+              <%}%>
+              <p class="author">Published at <%= new Date(item.publishedAt).toGMTString()%></p>
+              <!-- new Date(date).toGMTString() -->
+
+              <button class="btn"><a href="<%= item.url%>">Read More</a></button>
+          
+            </div>
+            <%})%>
+    </div>
+    
+
+    
+</section>
+
+<article>
+
+  <div class="weather">
+    <h3 class="heading-weather">Sign up for the best weather services from us </h3>
+    <div class="weather-inside">
+      <div class="section-1">
+  
+      </div>
+      <p class="section-2">Delhi</p>
+      <p class="section-3">30&degC</p>
+      <div class="section-4">
+          <div class="section-4-1">
+              <div class="section-4-1-1">
+  
+              </div>
+              <div class="section-4-1-2">
+                  <p class="section-4-1-2-1">38&deg C</p>
+                  <p class="section-4-1-2-2">Feels like</p>
+              </div>
+              
+          </div>
+          <div class="section-4-2">
+              <div class="section-4-2-1">
+  
+              </div>
+              <div class="section-4-2-2">
+                  <p class="section-4-2-2-1">62%</p>
+                  <p class="section-4-2-2-2">Humidity</p>
+              </div>
+              
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+<%- include('./partials/footer.ejs')%>

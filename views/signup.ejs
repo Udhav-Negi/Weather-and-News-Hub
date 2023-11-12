@@ -1,0 +1,64 @@
+<%- include('./partials/header.ejs', {style : '/udhav/css/signup.css', title : "Sign Up"})%>
+
+<form action="/udhav/signup" method="post">
+    <div class="container">
+        <h2>Create a new account</h2>
+        <input type="text" name="firstname" placeholder="First name" required minlength="5">
+        <input type="text" name="lastname" placeholder="Last Name" required minlength="4">
+        <div class="contact">
+            <input type="email" name="email" placeholder="Email address" required>
+            <input type="number" name="number" placeholder="Mobile number"  required>
+        </div>
+        <div class="password">
+            <input type="password" name="password" placeholder="Pasword" required>
+        </div>
+    
+        <div class="dob">
+            <div class="entries">
+                <p class="dob-text">Date of Birth</p>
+                <select name="date" id="date" required>
+                    <option class="option" value="1" >1</option>
+                    <option class="option" value="2" >2</option>
+                    <option class="option" value="3" selected>3</option>
+                </select>
+        
+                <select name="month" id="month" required>
+                    <option class="option" value="1">Jan</option>
+                    <option class="option" value="2">Feb</option>
+                    <option class="option" value="3">Mar</option>
+                </select>
+        
+                <select name="year" id="year" required>
+                    <option class="option" value="1981">1981</option>
+                    <option class="option" value="1982">1982</option>
+                    <option class="option" value="1983">1983</option>
+                    <option class="option" value="1984">1984</option>
+                </select>
+            </div>
+        </div> 
+    
+        <div class="gender" >
+            <p class="gender-text dob-text">Gender</p>
+            <select name="gender" id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+    
+        <button class="btn btn-create">Create Account</button>
+        <button class="btn btn-account" type="button">Already have an account</button>
+
+    </div>
+
+</form>
+<!-- </body>
+<script src="/udhav/js/signup.js"></script>
+</html> -->
+<script>
+    document.getElementsByClassName('btn-account')[0].addEventListener('click', ()=>{
+        window.location.href = "/udhav/login"
+    })
+</script>
+
+<%- include('./partials/footer.ejs')%>
