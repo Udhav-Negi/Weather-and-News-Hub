@@ -16,6 +16,8 @@ router.get('/signup', Controller.signUp)
 router.post('/signup', Controller.signUpPost);
 router.get('/weather', auth, Controller.weatherGet);
 router.get('/back', auth,  Controller.back);
+router.get('/contact', Controller.contact)
+router.post('/query', Controller.query)
 
 
 

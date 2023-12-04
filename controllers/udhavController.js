@@ -5,6 +5,7 @@ import userModel from "../model/models.js";
 import NewsController from "./newsController.js";
 import cookieParser from "cookie-parser";
 import auth from "../authorization/auth.js";
+import UserContactModel from "../model/UserContactModel.js";
 
 
 
@@ -168,6 +169,23 @@ export default class Controller {
         else 
         {
             res.redirect('/udhav')
+        }
+    }
+
+    static contact = (req, res)=>{
+        res.render('contact');
+    }
+
+    static query = async (req, res)=>{
+        let user
+        try{
+            user = new UserContactModel(req.body);
+            await user.save();
+            res.redirect('/udhav/');
+        }
+        catch(err)
+        {
+            res.json({"error is " : err.message})
         }
     }
 }
