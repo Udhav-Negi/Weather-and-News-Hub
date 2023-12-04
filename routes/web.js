@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import Controller from '../controllers/udhavController.js';
+import Controller from '../controllers/userController.js';
 import NewsController from '../controllers/newsController.js';
 import auth from '../authorization/auth.js';
 
