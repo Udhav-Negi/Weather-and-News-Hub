@@ -20,6 +20,5 @@
 1. ### cookie parser 
 1. ### mongoDB
 
-# Would you be interested in collaborating with me on my project to create something extraordinary together?
 
 
